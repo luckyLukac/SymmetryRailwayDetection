@@ -4,8 +4,8 @@ Avtorji/Authors: Luka Lukač, Sašo Pečnik, Andrej Nerat, Borut Žalik, David P
 
 Univerza v Mariboru, Fakulteta za elektrotehniko, računalništvo in informatiko, Maribor, 2023
 
-Izvorna koda aplikacije zaznave zrcalnih simetrij, razvitega v projektu Posplošene simetrije in ekvivalence v geometrijskih podatkih
+Izvorna koda algoritma detekcije železniških tirov s pomočjo zrcalne simetrije, razvitega v projektu Posplošene simetrije in ekvivalence v geometrijskih podatkih
 
-Source code of reflection symmetry detection, developed within the project Generalized symmetries and equivalences of geometric data
+Source code of the algorithm for the detection of railways using reflection symmetry, developed within the project Generalized symmetries and equivalences of geometric data
 
 Financira/Financed by: ARIS (projekt N2-0181)
