@@ -1,0 +1,3 @@
+[submodule "localsymmetrydetector"]
+	path = localsymmetrydetector
+	url = https://gitlab.gemma.feri.um.si/luka_lukac/localsymmetrydetector

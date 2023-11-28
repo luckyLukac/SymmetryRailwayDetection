@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{674B7A05-18CD-4E05-8ED4-0DEC7575FA22}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22000.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.22000.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>6.4.1_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets;openglwidgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>6.4.1_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets;openglwidgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>C:\Users\Uporabnik\source\repos\RailwayDetection\laslib\include;C:\Users\Uporabnik\source\repos\RailwayDetection\GLM;C:\Users\Uporabnik\source\repos\RailwayDetection\;C:\Users\Uporabnik\source\repos\RailwayDetection\OpenGL;C:\Qt\6.4.1\mingw_64\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <IncludePath>C:\Users\Uporabnik\source\repos\RailwayDetection\laslib\include;C:\Users\Uporabnik\source\repos\RailwayDetection\GLM;C:\Users\Uporabnik\source\repos\RailwayDetection\;C:\Users\Uporabnik\source\repos\RailwayDetection\OpenGL;C:\Qt\6.4.1\mingw_64\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera\cameraparameters.cpp" />
+    <ClCompile Include="GeometricRailwayExtraction.cpp" />
+    <ClCompile Include="LinearRegression\LinearRegression.cpp" />
+    <ClCompile Include="LocalSymmetryDetector\BruteRotationalSymmetry.cpp" />
+    <ClCompile Include="LocalSymmetryDetector\LocalSymmetry.cpp" />
+    <ClCompile Include="LocalSymmetryDetector\ReflectionSymmetry.cpp" />
+    <ClCompile Include="LocalSymmetryDetector\RotationalSymmetry.cpp" />
+    <ClCompile Include="LocalSymmetryDetector\Structs\Functions.cpp" />
+    <ClCompile Include="OpenGL\openglwidget.cpp" />
+    <ClCompile Include="OpenGL\PlanePicker.cpp" />
+    <ClCompile Include="PointReader\PointReader.cpp" />
+    <ClCompile Include="RailObstacleDetector.cpp" />
+    <QtRcc Include="MainWindow.qrc" />
+    <QtUic Include="Camera\CameraParameters.ui" />
+    <QtUic Include="MainWindow.ui" />
+    <QtMoc Include="MainWindow.hpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeometricRailwayExtraction.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\BruteRotationalSymmetry.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\LocalSymmetry.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\ReflectionSymmetry.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\RotationalSymmetry.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\Structs\Color.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\Structs\Constants.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\Structs\Functions.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\Structs\Tolerance.hpp" />
+    <ClInclude Include="LocalSymmetryDetector\Structs\Voxel.hpp" />
+    <ClInclude Include="PointReader\PointReader.hpp" />
+    <ClInclude Include="RailObstacleDetector.hpp" />
+    <ClInclude Include="LinearRegression\LinearRegression.hpp" />
+    <QtMoc Include="Camera\CameraParameters.hpp" />
+    <ClInclude Include="GLM\glm\gtc\vec1.hpp" />
+    <ClInclude Include="localsymmetrylib\localsymmetry.h" />
+    <ClInclude Include="localsymmetrylib\reflectionsymmetry.h" />
+    <ClInclude Include="OpenGL\openglwidget.h" />
+    <ClInclude Include="OpenGL\PlanePicker.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LocalSymmetryDetector\Structs\LineSegment.tpp" />
+    <None Include="LocalSymmetryDetector\Structs\Plane.tpp" />
+    <None Include="LocalSymmetryDetector\Structs\Point.tpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
